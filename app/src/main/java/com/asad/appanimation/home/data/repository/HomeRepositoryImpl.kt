@@ -12,7 +12,8 @@ import javax.inject.Inject
 class HomeRepositoryImpl @Inject constructor(
     private val homeRemoteDataSource: HomeRemoteDataSource
 ) : HomeRepository {
-    override suspend fun getHomeData(): Flow<DataResult<List<HomeDataModel>>> =
-        homeRemoteDataSource.getHomeData()
+    override suspend fun getHomeData(): Flow<DataResult<List<HomeDataModel>>> {
+        return homeRemoteDataSource.getHomeData()
+    }
 
 }
