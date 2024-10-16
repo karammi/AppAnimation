@@ -1,4 +1,4 @@
-package com.asad.appanimation.app.ui.theme
+package com.asad.appanimation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
