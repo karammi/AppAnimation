@@ -13,6 +13,5 @@ import javax.inject.Singleton
 object HomeModule {
 
     @Provides
-    @Singleton
     fun provideHomeApi(retrofit: Retrofit): HomeApi = retrofit.create(HomeApi::class.java)
 }

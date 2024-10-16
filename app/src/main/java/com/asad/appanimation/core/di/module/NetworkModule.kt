@@ -1,6 +1,9 @@
 package com.asad.appanimation.core.di.module
 
+import com.asad.appanimation.core.data.dataSource.CustomHttpInterceptor
+import com.asad.appanimation.core.data.dataSource.CustomNetworkException
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Lazy
 import dagger.Module
 import dagger.Provides
@@ -22,7 +25,10 @@ object NetworkModule {
     fun provideBaseUrl() = "http://45.84.220.20:8081/"
 
     @Provides
-    fun provideMoshi(): Moshi = Moshi.Builder().build()
+    fun provideMoshi(): Moshi =Moshi.Builder()
+        .addLast(KotlinJsonAdapterFactory())
+        .build()
+//    fun provideMoshi(): Moshi = Moshi.Builder().build()
 
     @Provides
     fun provideMoshiConverter(moshi: Moshi): MoshiConverterFactory {
@@ -32,8 +38,10 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(
+        customHttpInterceptor: CustomHttpInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(customHttpInterceptor)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .build()
@@ -53,4 +61,9 @@ object NetworkModule {
             .build()
     }
 
+    @Provides
+    @Singleton
+    fun provideRetrofitErrorConverter(retrofit: Retrofit): Converter<ResponseBody, CustomNetworkException> {
+        return retrofit.responseBodyConverter(CustomNetworkException::class.java, arrayOf())
+    }
 }

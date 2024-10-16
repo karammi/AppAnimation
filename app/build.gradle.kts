@@ -70,10 +70,10 @@ dependencies {
     implementation(libs.navigation.compose)
 
     //room
-    implementation(libs.room.runtime)
-    kapt(libs.room.compiler)
-    implementation(libs.room.ktx)
-    androidTestImplementation(libs.room.testing)
+//    implementation(libs.room.runtime)
+//    kapt(libs.room.compiler)
+//    implementation(libs.room.ktx)
+//    androidTestImplementation(libs.room.testing)
 
     implementation(libs.retrofit)
     implementation(libs.reftofit.converter.moshi)
@@ -81,7 +81,7 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.moshi.adapters)
-    kapt(libs.moshi.kotlin.codegen)
+//    kapt(libs.moshi.kotlin.codegen)
 
     implementation(libs.material)
 
