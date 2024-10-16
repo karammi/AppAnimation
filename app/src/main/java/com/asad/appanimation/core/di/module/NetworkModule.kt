@@ -19,7 +19,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
     @Provides
-    fun provideBaseUrl() = "http://45.84.220.20:8081/mock/asset"
+    fun provideBaseUrl() = "http://45.84.220.20:8081/"
 
     @Provides
     fun provideMoshi(): Moshi = Moshi.Builder().build()
