@@ -11,15 +11,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.asad.appanimation.home.presentation.viewModel.HomeViewModel
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    homeViewModel: HomeViewModel = hiltViewModel()
+) {
     HomeContent()
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun HomeContent(modifier: Modifier = Modifier) {
+private fun HomeContent() {
     Scaffold(
         topBar = {
             TopAppBar(title = {
