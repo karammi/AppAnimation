@@ -21,18 +21,20 @@ import java.io.File
 
 @Composable
 fun HomeScreen(
-    homeViewModel: HomeViewModel = hiltViewModel()
+    homeViewModel: HomeViewModel = hiltViewModel(),
+    onFolderClick: (File) -> Unit
 ) {
     val uiState = homeViewModel.uiState.collectAsStateWithLifecycle()
     val folders = uiState.value.folders ?: emptyList()
 
-    HomeContent(folders = folders)
+    HomeContent(folders = folders, onFolderClick = onFolderClick)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun HomeContent(
-    folders: List<File> = emptyList()
+    folders: List<File> = emptyList(),
+    onFolderClick: (File) -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -55,7 +57,7 @@ private fun HomeContent(
             ) {
                 items(folders.size) { index ->
                     val folder = folders[index]
-                    FolderItem(folder)
+                    FolderItem(folder = folder, onClick = onFolderClick)
                 }
             }
         }

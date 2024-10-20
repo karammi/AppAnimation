@@ -22,11 +22,14 @@ import java.io.File
 import com.asad.appanimation.R
 
 @Composable
-fun FolderItem(folder: File) {
+fun FolderItem(
+    folder: File,
+    onClick: (File) -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { }
+            .clickable { onClick(folder) }
             .padding(8.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
