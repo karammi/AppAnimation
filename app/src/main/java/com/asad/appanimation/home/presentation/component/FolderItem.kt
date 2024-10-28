@@ -1,4 +1,4 @@
-package com.asad.appanimation.home.presentation
+package com.asad.appanimation.home.presentation.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

@@ -24,6 +24,7 @@ turbineVersion = "1.1.0"
 mockkVersion="1.12.5"
 kotlinCollectionVersion = "0.3.5"
 okhttpVersion = "4.11.0"
+coilCompose = "3.0.0-rc01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -63,6 +64,8 @@ core-testing = { group = "androidx.arch.core", name = "core-testing", version.re
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbineVersion" }
 mockk = {group = "io.mockk",name="mockk",version.ref = "mockkVersion"}
 okhttp = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpVersion"}
+coil3-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
+coil3-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

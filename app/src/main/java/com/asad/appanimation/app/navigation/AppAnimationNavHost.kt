@@ -11,7 +11,7 @@ import com.asad.appanimation.showcase.presentation.screen.AnimationShowcaseScree
 import java.io.File
 
 @Composable
-fun AppAnimationNavHost() {
+fun AppAnimationNavHost(changeScreen:()-> Unit) {
 
     val navController = rememberNavController()
 
@@ -37,6 +37,7 @@ fun AppAnimationNavHost() {
                 )
             )
         ) { navBackStackEntry ->
+//            changeScreen()
             val animationPathArgs = navBackStackEntry.arguments?.getString(NavConstants.ANIMATION_PATH_ARGUMENT)
             animationPathArgs?.let { path -> AnimationShowcaseScreen(path = path) }
         }

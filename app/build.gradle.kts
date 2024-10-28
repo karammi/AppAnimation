@@ -101,4 +101,7 @@ dependencies {
 
     testImplementation(libs.mockk)
     androidTestImplementation(libs.okhttp)
+
+    implementation(libs.coil3.network.okhttp)
+    implementation(libs.coil3.coil.compose)
 }

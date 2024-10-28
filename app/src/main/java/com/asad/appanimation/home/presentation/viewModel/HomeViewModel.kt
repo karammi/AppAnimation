@@ -59,12 +59,11 @@ class HomeViewModel @Inject constructor(
                 ?.filter { it.isDirectory }
                 ?.filter { !it.name.contains("__") }
 
+//        val files = getImageFilesFromDirectory()
+
         _uiState.update { currentState ->
             currentState.copy(folders = folders)
         }
-
-        Log.d(TAG, "fetchDirectoryItems: $folders")
-
     }
 }
 
