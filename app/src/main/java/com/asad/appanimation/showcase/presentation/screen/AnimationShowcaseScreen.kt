@@ -73,10 +73,11 @@ fun AnimationShowcaseContent(
         }
     ) { paddingValue ->
         Column(modifier = Modifier.padding(paddingValue)) {
-            AnimatedImageSequence(getImageFilesFromDirectory("app_animation_folder/FUE-Consolation"))
-//            AnimatedImageSequence6(imageUrls = getImageFilesFromDirectory("app_animation_folder/FUE-Consolation"))
+//            AnimatedImageSequence(getImageFilesFromDirectory("app_animation_folder/FUE-Consolation"))
+            AnimatedImageSequence6(imageUrls = getImageFilesFromDirectory("app_animation_folder/FUE-Consolation"))
 //            AnimatedImageSequence5(imageUrls = getImageFilesFromDirectory("app_animation_folder/FUE-Consolation"))
 //            AnimatedImageSequence5(imageUrls = getImageFilesFromDirectory("app_animation_folder/FirstUser_Background"))
+//            AnimatedImageSequence(imageUrls = getImageFilesFromDirectory("app_animation_folder/FUE-Consolation"))
 //            AnimatedImageSequence5(imageUrls = getImageFilesFromDirectory("app_animation_folder/06-Nod"))
         }
 
